@@ -47,7 +47,9 @@ const App = () => {
       <Button handleClick={() => setToDir(setItems)} text='vote' />
       <Button handleClick={() => setToValue(setSelected, Math.floor((Math.random() * anecdotes.length)))} text="next anecdote" />
       <h2>Anecdote with most votes</h2>
-      <Anecdote anecdote={anecdotes[Math.max.apply(null, items)]} vote={Math.max.apply(null, items)} />
+      {console.log(anecdotes.indexOf(Math.max.apply(null, items)))}
+      {console.log(Math.max.apply(null, items))}
+      <Anecdote anecdote={anecdotes[items.indexOf(Math.max.apply(null, items))]} vote={Math.max.apply(null, items)} />
     </div>
   )
 }
